@@ -1,0 +1,13 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+	  "types": ["cypress", "@testing-library/cypress"],
+	  "jsx": "react-jsx",
+	  "module": "esnext",
+	  "target": "ES6",
+	  "noEmit": true,
+	  "isolatedModules": true
+	},
+	"include": ["**/*.ts", "**/*.tsx"]
+  }
+  
