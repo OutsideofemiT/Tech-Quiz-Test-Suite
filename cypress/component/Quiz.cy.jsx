@@ -1,7 +1,9 @@
 import React from 'react';
 import Quiz from "../../client/src/components/Quiz";
 import questions from '../fixtures/questions.json';
+import '@testing-library/cypress/add-commands';
 
+Cypress.Commands.add('mount', mount);
 
 const mockQuestions = [
 	{
