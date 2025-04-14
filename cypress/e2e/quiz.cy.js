@@ -3,7 +3,7 @@ import questions from '../fixtures/questions.json';
 describe('Tech Quiz E2E', () => {
   // Runs before each test to mock API and load the app
   beforeEach(() => {
-    cy.intercept('GET', '/api/questions', questions);
+    cy.intercept('GET', '/api/questions/random', questions);
     cy.visit('/');
   });
 
