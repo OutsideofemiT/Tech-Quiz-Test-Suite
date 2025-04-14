@@ -102,7 +102,13 @@ Choose **E2E** or **Component Testing** in the Cypress Test Runner to begin.
 
 ## 📸 Screenshots
 
-> _Add screenshots or a demo GIF of the app/test run here if available._
+## 🎥 Video Walkthrough
+
+[Click here to watch the demo on Screencastify](https://app.screencastify.com/v3/watch/TE24DXI7zCfPTZPZ1xDj)
+
+
+![Quiz App Screenshot](client/public/image.png)
+
 
 ---
 
