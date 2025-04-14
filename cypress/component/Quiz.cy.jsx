@@ -9,15 +9,15 @@ const mockQuestions = [
 	  answers: [
 		{ text: '3', isCorrect: false },
 		{ text: '4', isCorrect: true },
-	  ],
-	  
+	  ]
+	},
+	{
 	  question: 'What is 4 + 5?',
 	  answers: [
-		 {text: '6', isCorrect: false },
-		 {text: '9', isCorrect: true },
-
-	  ],
-	},
+		{ text: '6', isCorrect: false },
+		{ text: '9', isCorrect: true },
+	  ]
+	}
   ];
   
   beforeEach(() => {
