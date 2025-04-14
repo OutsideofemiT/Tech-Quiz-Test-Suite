@@ -2,6 +2,7 @@ import React from 'react';
 import Quiz from "../../client/src/components/Quiz";
 import questions from '../fixtures/questions.json';
 import '@testing-library/cypress/add-commands';
+import { mount } from 'cypress/react18'; 
 
 Cypress.Commands.add('mount', mount);
 
@@ -40,18 +41,15 @@ it('should start the quiz and display the first question', () => {
   });
 });
 
-it('should advance to the next question after the user clicks an answer button',() =>{
+it('should display the second question after the user clicks an answer on the first question', () => {
 	cy.mount(<Quiz />);
-	cy.findByRole('button', { name: '1' }).click();
-	cy.findByText('What is 4 + 5?').should('exist')
-});
-
-it('should display the second question', () => {
-	cy.mount(<Quiz />);
-	cy.findByRole('button', { name: /start quiz/i }).click();
-	cy.findByRole('button', { name: '1' }).click();
-	cy.findByText('What is 4 + 5?').should('exist');
-});
+	cy.findByRole('button', { name: /start quiz/i }).click(); // Start quiz
+	cy.findAllByRole('button') // Wait for and click first answer button
+	  .first()
+	  .click();
+	cy.findByText('What is 4 + 5?').should('exist'); // Confirm second question
+  });
+  
 
 it('should show the quiz completed and display score after last question', () => {
 	cy.mount(<Quiz />);
