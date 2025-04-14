@@ -1,6 +1,6 @@
 import React from 'react';
 import Quiz from "../../client/src/components/Quiz";
-import * as questionApi from '../../client/src/services/questionApi';
+import questions from '../fixtures/questions.json';
 
 
 const mockQuestions = [
@@ -21,7 +21,7 @@ const mockQuestions = [
   ];
   
   beforeEach(() => {
-	cy.stub(questionApi, 'getQuestions').resolves(mockQuestions);
+	cy.intercept('GET', '/api/questions/random', questions).as('getQuestions');
   });
   
 describe('<Quiz />', () => {
